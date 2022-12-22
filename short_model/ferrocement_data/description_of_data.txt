@@ -1,0 +1,12 @@
+********** NOTES ***********
+
+Data was taken from https://www.github.com/diegoandresalvarez/BWBN_TMCMC/blob/main/data/ . It must be complemented with additional information about time, units, initial conditions, and system parameters found in files https://www.github.com/diegoandresalvarez/BWBN_TMCMC/blob/main/BW_exp_data.m (lines 43, 45,
+52) and https://www.github.com/diegoandresalvarez/BWBN_TMCMC/blob/main/log_p_X_theta.m (line 34).
+
+The yielding displacement corresponds to the maximum displacement of the initial linear branch, x[6].
+
+Units:
+Displacement  ---> [mm]
+Force         ---> [kN]
+Stiffness     ---> [kN/mm]
+Mass          ---> [kg]

@@ -1,0 +1,14 @@
+********** NOTES ***********
+
+- Data was given by Profesor Daniel Beodya. According to the given file, it correspond to a postensioned wall.
+- The initial condition corresponds to repose.
+- According to the Profesor Daniel Bedoya, the mass could be assumed 600 kg.
+- The yielding displacement is the second displacement because it was the largest displacement where the force-displacement curve can recover a (practically) zero displacement when unloading.
+- The initial elastic stiffness is slope of the line between the origin and the second point of the force-displacement curve.
+- The times are unknown.
+
+Units:
+Displacement  ---> [mm]
+Force         ---> [kN]
+Stiffness     ---> [kN/mm]
+Mass          ---> [kg]

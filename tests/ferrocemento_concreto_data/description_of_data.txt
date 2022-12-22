@@ -1,0 +1,14 @@
+********** NOTES ***********
+
+- Data was given by Profesor Daniel Beodya. According to the given file, it correspond to a wall of ferrocement and reinforced concrete.
+- The initial condition corresponds to repose.
+- According to the Profesor Daniel Bedoya, the mass could be assumed 600 kg.
+- The initial elastic stiffness is slope of the line between the origin and the second point of the force-displacement curve because the curve is (partically) linear up to this point; the correlation coefficient is (R2) 0.998.
+- The yielding displacement is the third displacement because it is the maximum displacement of the linear branch.
+- The times are unkonwn.
+
+Units:
+Displacement  ---> [mm]
+Force         ---> [kN]
+Stiffness     ---> [kN/mm]
+Mass          ---> [kg]
