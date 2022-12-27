@@ -3,13 +3,13 @@
 This repository stores three hysteretic models and experimental data of hysteretic structural systems. The models use the theory of *Physics-Guided Neural Networks* (PGNNs) [1] and *Universal Ordinary Differential Equations* (UODEs) [2]; thus, they correspond to *Physics-Guided Universal Ordinary Differential Equations* (PGUODEs).
 
 UODEs are differential equations that use universal approximators, such as *multilayer perceptrons* (MLP), on the right-hand side of the equation; for example,
-$$
-\frac{\mathrm{d}u(t)}{\mathrm{dt}} = f(u, t) + \mathrm{MLP}(u, t),
-$$
+
+$$ \frac{\mathrm{d}u(t)}{\mathrm{d}t} = f(u, t) + \mathrm{MLP}(u, t),$$
+
 where $f$ is a function of the variables $u$ and $t$, and $\mathrm{MLP}(\cdot)$ represents a multilayer perceptron. On the other hand, PGNNs correspond to artificial neural networks that use physical constraints in their loss function $L$ so that they learn the physics of the task; for instance,
-$$
-L = \sum_{i}^{N_{e}} \frac{(y_{i} - \hat{y}_{i})^2}{N_{e}} + H(\hat{y}_{i}),
-$$
+
+$$ L = \sum_{i}^{N_{e}} \frac{(y_{i} - \hat{y}_{i})^2}{N_{e}} + H(\hat{y}_{i}),$$
+
 where $y_{i}$ and $\hat{y}_{i}$ stand for the targets and the predictions of the network and $H(\cdot)$ represents a physical constraint.
 
 The proposed models employ the above algorithms to include MLPs in the dynamic equation of structures and physical principles in their training. The MLPs model the dynamics of restoring force $f_{r}(t)$ based on the displacement $x(t)$, the velocity $v(t)$, the dissipated energy $\varepsilon(t)$, and eventually, on the largest displacement $x(t)$ and a latent quantity $s(t)$.
