@@ -14,19 +14,8 @@ where $y_{i}$ and $\hat{y}_{i}$ stand for the targets and the predictions of the
 
 The proposed models (called [short](./short_model/), [full](./full_model/), and [augmented](./augme_model/)) employ the above algorithms to include MLPs in the dynamic equation of structures and physical principles in their training. The MLPs model the dynamics of restoring force $f_{r}(t)$ based on the displacement $x(t)$, the velocity $v(t)$, the dissipated energy $\varepsilon(t)$, and eventually, on the largest displacement $x_{l}(t)$ and a latent quantity $s(t)$. In this way, [the short model](./short_model/) corresponds to the following ODE
 
-$$\begin{bmatrix}
-    \frac{\mathrm{d}x(t)}{\mathrm{d}t}  \\
-    \frac{\mathrm{d}v(t)}{\mathrm{d}t}  \\
-    \frac{\mathrm{d}f_{r}(t)}{\mathrm{d}t}  \\
-    \frac{\mathrm{d}\varepsilon(t)}{\mathrm{d}t}
-\end{bmatrix}
-= 
-\begin{bmatrix}
-    v(t) \\
-    \frac{1}{m} [p(t) - cv(t) - f_{r}(t)] \\
-    \operatorname{MLP}(x(t), \mathrm{sign}(v(t)), f_{r}(t), \varepsilon(t)) \cdot v(t)  \\
-    \frac{1}{m} f_{r}(t) v(t)
-\end{bmatrix},$$
+$$\begin{bmatrix} \frac{\mathrm{d}x(t)}{\mathrm{d}t}  \\ \frac{\mathrm{d}v(t)}{\mathrm{d}t}  \\ \frac{\mathrm{d}f_{r}(t)}{\mathrm{d}t}  \\ \frac{\mathrm{d}\varepsilon(t)}{\mathrm{d}t} \end{bmatrix} = \begin{bmatrix} v(t) \\ \frac{1}{m} [p(t) - cv(t) - f_{r}(t)] \\ \operatorname{MLP}(x(t), \mathrm{sign}(v(t)), f_{r}(t), \varepsilon(t)) \cdot v(t)  \\ \frac{1}{m} f_{r}(t) v(t) \end{bmatrix},$$
+
 subjected to the four initial conditions $x(0)$, $v(0)$, $f_{r}(0)$, y $\varepsilon(0)$; here, $m$, $c$, and $p(t)$ stand for the mass, the damping constant, and the external force. Similarly, [the full model](./full_model/) describes a hysteretic structural system as
 $$\begin{bmatrix}
     \frac{\mathrm{d}x(t)}{\mathrm{d}t}  \\
