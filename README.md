@@ -82,8 +82,9 @@ where $x(t)$ and $\hat{x}(t)$ are the recorded and predicted displacements, $\va
 
 Following the theory of PGNNs [1], these principles are formulated as equality or inequality constraints of the predicted responses.
 
-The proposed models were validated with experimental data of [ferrocement](./tests/gilb_data)[3] and [recycled plastic lumber](./tests/rpl_data)[4] (RPL) walls, showing promising results. In these systems, the models have good accuracy, physical consistency, and generalization. Furthermore, they were versatile because they learned very different hysteresis with complicated nonlinear behaviors. For instance, the following figure shows the prediction of the short model for the ferrocement wall; observe that it produces a physically feasible hysteresis and accurately fits the displacements $x(t)$, dissipated energy $\varepsilon(t)$, and the hysteresis.
+The proposed models were validated with experimental data of [ferrocement](./tests/gilb_data)[3] and [recycled plastic lumber](./tests/rpl_data)[4] (RPL) walls, showing promising results. In these systems, the models have good accuracy, physical consistency, and generalization. Furthermore, they were versatile because they learned very different hysteresis with complicated nonlinear behaviors. For instance, the following figure shows the prediction of the short model, with three hidden layers of three neurons, for the ferrocement wall. Observe that it produces a physically feasible hysteresis and accurately fits the displacements $x(t)$, dissipated energy $\varepsilon(t)$, and the hysteresis.
 
+![Prediction of the short model for the ferrocement wall](./figs/results.PNG)
 
 For further information, the reader is referred to Delgado-Trujillo (2023) [5], which treats the models, their background theory, and their validation in detail.
 
