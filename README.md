@@ -1,6 +1,6 @@
 # Modeling hysteretic structures with PGUODEs
 
-This repository stores three hysteretic models and experimental data on hysteretic structural systems. The models use the theory of *Physics-Guided Neural Networks* (PGNNs) [1] and *Universal Ordinary Differential Equations* (UODEs) [2]; thus, they correspond to *Physics-Guided Universal Ordinary Differential Equations* (PGUODEs).
+This repository contains the implementation of the paper [Hysteresis modeling of structural systems using physics-guided universal ordinary differential equations](https://www.sciencedirect.com/science/article/pii/S0045794923000184)[1]. It stores the three hysteretic models and the experimental data on hysteretic structural systems. The models use the theory of *Physics-Guided Neural Networks* (PGNNs) [2] and *Universal Ordinary Differential Equations* (UODEs) [3]; thus, they correspond to *Physics-Guided Universal Ordinary Differential Equations* (PGUODEs).
 
 UODEs are differential equations that use universal approximators, such as *multilayer perceptrons* (MLP), on the right-hand side of the equation; for example,
 
@@ -82,22 +82,25 @@ where $x(t)$ and $\hat{x}(t)$ are the recorded and predicted displacements, $\va
 
 Following the theory of PGNNs [1], these principles are formulated as equality or inequality constraints of the predicted responses.
 
-The proposed models were validated with experimental data of [ferrocement](./tests/gilb_data)[3] and [recycled plastic lumber](./tests/rpl_data)[4] (RPL) walls, showing promising results. In these systems, the models have good accuracy, physical consistency, and generalization. Furthermore, they were versatile because they learned very different hysteresis with complicated nonlinear behaviors. For instance, the following figure shows the prediction of the short model, with three hidden layers of three neurons, for the ferrocement wall. Observe that it produces a physically feasible hysteresis and accurately fits the displacements $x(t)$, dissipated energy $\varepsilon(t)$, and the hysteresis.
+The proposed models were validated with experimental data of [ferrocement](./tests/gilb_data)[4] and [recycled plastic lumber](./tests/rpl_data)[5] (RPL) walls, showing promising results. In these systems, the models have good accuracy, physical consistency, and generalization. Furthermore, they were versatile because they learned very different hysteresis with complicated nonlinear behaviors. For instance, the following figure shows the prediction of the short model, with three hidden layers of three neurons, for the ferrocement wall. Observe that it produces a physically feasible hysteresis and accurately fits the displacements $x(t)$, dissipated energy $\varepsilon(t)$, and the hysteresis.
 
 ![Prediction of the short model for the ferrocement wall](./figs/results.PNG)
 
-For further information, the reader is referred to Delgado-Trujillo (2023) [5], which treats the models, their background theory, and their validation in detail.
+For further information, the reader is referred to Delgado-Trujillo (2023) [1, 6], which treats the models, their background theory, and their validation in detail.
 
 ### Note:
 For the development and validation of the models, we modified the source code of the *sciml_train* function. We pass the gradients of the parameters $\nabla \theta$ to the callback function so that they are considered in the stopping criteria. Nonetheless, this repository implements a second method of the callback function that does not receive the gradients to prevent the user modifies the source code.
 
 ## Bibliography:
-[1] A. Karpatne, W. Watkins, J. Read, V. Kumar, Physics-guided neural networks (PGNN): An application in lake temperature modeling, arXiv preprint arXiv:1710.11431v2 (2017). https://arxiv.org/abs/1710.11431
+[1] S. Delgado-Trujillo, D. A. Alvarez, D. Bedoya-Ruíz, Hysteresis modeling of structural systems using physics-guided universal ordinary differential equations,
+Computers & Structures, Volume 280, 2023, (https://www.sciencedirect.com/science/article/pii/S0045794923000184)
 
-[2] C. Rackauckas, Y. Ma, J. Martensen, C. Warner, K. Zubov, R. Supekar, D. Skinner, A. Ramadhan, Universal differential equations for scientific machine learning, arXiv preprint arXiv:2001.04385 (2020). https://arxiv.org/abs/2001.04385.
+[2] A. Karpatne, W. Watkins, J. Read, V. Kumar, Physics-guided neural networks (PGNN): An application in lake temperature modeling, arXiv preprint arXiv:1710.11431v2 (2017). https://arxiv.org/abs/1710.11431
 
-[3] G. A. Ortiz, D. A. Alvarez, D. Bedoya-Ruiz, Identication of Bouc-Wen type models using multi-objective optimization algorithms, Computers & Structures 114-115 (2013) 121-132.
+[3] C. Rackauckas, Y. Ma, J. Martensen, C. Warner, K. Zubov, R. Supekar, D. Skinner, A. Ramadhan, Universal differential equations for scientific machine learning, arXiv preprint arXiv:2001.04385 (2020). https://arxiv.org/abs/2001.04385.
 
-[4] D. Bedoya-Ruiz, J. E. Hurtado, L. Pujades, Experimental and analytical research on seismic vulnerability of low-cost ferrocement dwelling houses, Structure and Infrastructure Engineering 6 (2010) 55-62.
+[4] G. A. Ortiz, D. A. Alvarez, D. Bedoya-Ruiz, Identication of Bouc-Wen type models using multi-objective optimization algorithms, Computers & Structures 114-115 (2013) 121-132.
 
-[5] J. S. Delgado-Trujillo, Modeling of hysteretic structural systems using multilayer perceptrons and physics-guiding techniques, Master's thesis, Universidad Nacional de Colombia, Manizales - Caldas, 2023. **(In Process)**
+[5] D. Bedoya-Ruiz, J. E. Hurtado, L. Pujades, Experimental and analytical research on seismic vulnerability of low-cost ferrocement dwelling houses, Structure and Infrastructure Engineering 6 (2010) 55-62.
+
+[6] J. S. Delgado-Trujillo, Modeling of hysteretic structural systems using multilayer perceptrons and physics-guiding techniques, Master's thesis, Universidad Nacional de Colombia, Manizales - Caldas, 2023. **(In Process)**
