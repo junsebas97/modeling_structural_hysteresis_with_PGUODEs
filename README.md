@@ -103,4 +103,4 @@ Computers & Structures, Volume 280, 2023, (https://www.sciencedirect.com/science
 
 [5] D. Bedoya-Ruiz, J. E. Hurtado, L. Pujades, Experimental and analytical research on seismic vulnerability of low-cost ferrocement dwelling houses, Structure and Infrastructure Engineering 6 (2010) 55-62.
 
-[6] J. S. Delgado-Trujillo, Modeling of hysteretic structural systems using multilayer perceptrons and physics-guiding techniques, Master's thesis, Universidad Nacional de Colombia, Manizales - Caldas, 2023. **(In Process)**
+[6] J. S. Delgado-Trujillo, Modeling of hysteretic structural systems using multilayer perceptrons and physics-guiding techniques, Master's thesis, Universidad Nacional de Colombia, Manizales - Caldas, 2023. [https://repositorio.unal.edu.co/handle/unal/83560](https://repositorio.unal.edu.co/handle/unal/83560)
