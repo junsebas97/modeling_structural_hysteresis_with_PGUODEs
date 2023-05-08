@@ -4,11 +4,11 @@ This repository contains the implementation of the paper [Hysteresis modeling of
 
 UODEs are differential equations that use universal approximators, such as *multilayer perceptrons* (MLP), on the right-hand side of the equation; for example,
 
-$$ \frac{\mathrm{d}u(t)}{\mathrm{d}t} = f(u, t) + \mathrm{MLP}(u, t),$$
+$$\frac{\mathrm{d}u(t)}{\mathrm{d}t} = f(u, t) + \mathrm{MLP}(u, t),$$
 
 where $f$ is a function of the variables $u$ and $t$, and $\mathrm{MLP}(\cdot)$ represents a multilayer perceptron. On the other hand, PGNNs correspond to artificial neural networks that use physical constraints in their loss function $L$ so that they learn the physics governing the task; for instance,
 
-$$ L = \sum_{i}^{N_{e}} \frac{(y_{i} - \hat{y}_{i})^2}{N_{e}} + H(\hat{y}_{i}),$$
+$$L = \sum_{i}^{N_{e}} \frac{(y_{i} - \hat{y_{i}})^{2}}{N_{e}} + H(\hat{y}_{i})$$
 
 where $y_{i}$ and $\hat{y}_{i}$ stand for the targets and the predictions of the network and $H(\cdot)$ represents a physical constraint.
 
@@ -25,7 +25,7 @@ The proposed models (called [short](./short_model/), [full](./full_model/), and 
 \begin{bmatrix}
     v(t) \\
     \frac{1}{m} [p(t) - cv(t) - f_{r}(t)] \\
-    \operatorname{MLP}(x(t), \mathrm{sign}(v(t)), f_{r}(t), \varepsilon(t)) \cdot v(t)  \\
+    \mathrm{MLP}(x(t), \mathrm{sign}(v(t)), f_{r}(t), \varepsilon(t)) \cdot v(t)  \\
     \frac{1}{m} f_{r}(t) v(t)
 \end{bmatrix},
 ```
@@ -43,9 +43,9 @@ subjected to the four initial conditions $x(0)$, $v(0)$, $f_{r}(0)$, y $\varepsi
 \begin{bmatrix}
         v(t) \\
         \frac{1}{m} [p(t) - cv(t) - f_{r}(t)]            \\
-        \operatorname{MLP}(x(t), \mathrm{sign}(v(t)), f_{r}(t), \varepsilon(t), x_{l}(t)) \cdot v(t) \\
+        \mathrm{MLP}(x(t), \mathrm{sign}(v(t)), f_{r}(t), \varepsilon(t), x_{l}(t)) \cdot v(t) \\
         \frac{1}{m} f_{r}(t) v(t)  \\
-        |v(t)| \hat{\operatorname{H}}(|x(t)| - x_{l}(t))
+        |v(t)| \hat{\mathrm{H}}(|x(t)| - x_{l}(t))
 \end{bmatrix},
 ```
 where $\hat{H}(\cdot)$ is the Heaviside step function, and the initial condition $x_{l}(0)$ is also required. Finally, [the augmented model](./augme_model/) corresponds to the following ODE:
@@ -66,7 +66,7 @@ where $\hat{H}(\cdot)$ is the Heaviside step function, and the initial condition
     O_{2}(t)
 \end{bmatrix},
 ```
-where $[O_{1}(t), O_{2}(t)] = \operatorname{MLP}(x(t),\ \mathrm{sign}(v(t)),\ f_{r}(t),\ \varepsilon(t),\ s(t))$ are the output of the multilayer perceptron, and the initial condition $s(0)$ is also required. 
+where $[O_{1}(t), O_{2}(t)] = \mathrm{MLP}(x(t),\ \mathrm{sign}(v(t)),\ f_{r}(t),\ \varepsilon(t),\ s(t))$ are the output of the multilayer perceptron, and the initial condition $s(0)$ is also required. 
 
 For training, the models use a loss function $L(\theta)$ with a data-driven $l_{D}(\theta)$ and physics-guided component $l_{P}(\theta)$; that is, $L(\theta) = l_{D}(\theta) + l_{P}(\theta)$. The data-driven part corresponds to a modulated mean-squared error between the predicted and recorded displacements and dissipated energies:
 
